@@ -1,4 +1,4 @@
-[submodule "assets"]
+[submodule "assets/misskey"]
 	path = assets/misskey
 	url = https://github.com/misskey-dev/assets.git
 [submodule "lib/CubismWebFramework"]
