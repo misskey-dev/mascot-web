@@ -4,7 +4,7 @@ import { getAngle, getDistance } from './math-util';
 
 const CUBISM_CORE_URL = 'https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js';
 
-const MODEL_PATH = '/misskey/live2d/ai/web/';
+const MODEL_PATH = './misskey/live2d/ai/web/';
 const MODEL_FILES = {
 	moc3: MODEL_PATH + 'ai.moc3',
 	model3: MODEL_PATH + 'ai.model3.json',
