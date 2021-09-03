@@ -9,6 +9,7 @@ export default defineConfig({
 			replacement: __dirname + '/lib/'
 		}]
 	},
+	base: '/mascot-web/',
 	publicDir: 'assets',
 	build: {
 		assetsDir: 'built'
