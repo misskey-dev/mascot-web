@@ -1,47 +1,47 @@
-import { Live2DCubismFramework } from '@lib/CubismWebFramework/src/live2dcubismframework';
+import * as Live2DCubismFramework from '@lib/CubismWebFramework/src/live2dcubismframework';
 const CubismFramework = Live2DCubismFramework.CubismFramework;
 
-import { Live2DCubismFramework as icubismmodelsetting } from '@lib/CubismWebFramework/src/icubismmodelsetting';
-abstract class ICubismModelSetting extends icubismmodelsetting.ICubismModelSetting {}
+import * as icubismmodelsetting from '@lib/CubismWebFramework/src/icubismmodelsetting';
+abstract class ICubismModelSetting extends icubismmodelsetting.Live2DCubismFramework.ICubismModelSetting {}
 
-import { Live2DCubismFramework as cubismmodelsettingjson } from '@lib/CubismWebFramework/src/cubismmodelsettingjson';
-class CubismModelSettingJson extends cubismmodelsettingjson.CubismModelSettingJson {}
+import * as cubismmodelsettingjson from '@lib/CubismWebFramework/src/cubismmodelsettingjson';
+class CubismModelSettingJson extends cubismmodelsettingjson.Live2DCubismFramework.CubismModelSettingJson {}
 
 // math
-import { Live2DCubismFramework as cubismmatrix44 } from '@lib/CubismWebFramework/src/math/cubismmatrix44';
-class CubismMatrix44 extends cubismmatrix44.CubismMatrix44 {}
+import * as cubismmatrix44 from '@lib/CubismWebFramework/src/math/cubismmatrix44';
+class CubismMatrix44 extends cubismmatrix44.Live2DCubismFramework.CubismMatrix44 {}
 
-import { Live2DCubismFramework as cubismusermodel } from '@lib/CubismWebFramework/src/model/cubismusermodel';
-class CubismUserModel extends cubismusermodel.CubismUserModel {}
+import * as cubismusermodel from '@lib/CubismWebFramework/src/model/cubismusermodel';
+class CubismUserModel extends cubismusermodel.Live2DCubismFramework.CubismUserModel {}
 
 // motion
-import { Live2DCubismFramework as acubismmotion } from '@lib/CubismWebFramework/src/motion/acubismmotion';
-abstract class ACubismMotion extends acubismmotion.ACubismMotion {}
+import * as acubismmotion from '@lib/CubismWebFramework/src/motion/acubismmotion';
+abstract class ACubismMotion extends acubismmotion.Live2DCubismFramework.ACubismMotion {}
 
-import { Live2DCubismFramework as cubismmotion } from '@lib/CubismWebFramework/src/motion/cubismmotion';
-class CubismMotion extends cubismmotion.CubismMotion {}
+import * as cubismmotion from '@lib/CubismWebFramework/src/motion/cubismmotion';
+class CubismMotion extends cubismmotion.Live2DCubismFramework.CubismMotion {}
 
-import { Live2DCubismFramework as cubismexpressionmotion } from '@lib/CubismWebFramework/src/motion/cubismexpressionmotion';
-class CubismExpressionMotion extends cubismexpressionmotion.CubismExpressionMotion {}
+import * as cubismexpressionmotion from '@lib/CubismWebFramework/src/motion/cubismexpressionmotion';
+class CubismExpressionMotion extends cubismexpressionmotion.Live2DCubismFramework.CubismExpressionMotion {}
 
-import { Live2DCubismFramework as cubismmotionmanager } from '@lib/CubismWebFramework/src/motion/cubismmotionmanager';
-class CubismMotionManager extends cubismmotionmanager.CubismMotionManager {}
+import * as cubismmotionmanager from '@lib/CubismWebFramework/src/motion/cubismmotionmanager';
+class CubismMotionManager extends cubismmotionmanager.Live2DCubismFramework.CubismMotionManager {}
 
 // physics
-import { Live2DCubismFramework as cubismphysics } from '@lib/CubismWebFramework/src/physics/cubismphysics';
-class CubismPhysics extends cubismphysics.CubismPhysics {}
+import * as cubismphysics from '@lib/CubismWebFramework/src/physics/cubismphysics';
+class CubismPhysics extends cubismphysics.Live2DCubismFramework.CubismPhysics {}
 
 // cubismid
-import { Live2DCubismFramework as cubismid } from '@lib/CubismWebFramework/src/id/cubismid';
-type CubismIdHandle = cubismid.CubismIdHandle;
+import * as cubismid from '@lib/CubismWebFramework/src/id/cubismid';
+type CubismIdHandle = cubismid.Live2DCubismFramework.CubismIdHandle;
 
 // effect
-import { Live2DCubismFramework as cubismeyeblink } from '@lib/CubismWebFramework/src/effect/cubismeyeblink';
-class CubismEyeBlink extends cubismeyeblink.CubismEyeBlink {}
+import * as cubismeyeblink from '@lib/CubismWebFramework/src/effect/cubismeyeblink';
+class CubismEyeBlink extends cubismeyeblink.Live2DCubismFramework.CubismEyeBlink {}
 
 // type
-import { Live2DCubismFramework as csmvector } from '@lib/CubismWebFramework/src/type/csmvector';
-class CsmVector<T> extends csmvector.csmVector<T> {}
+import * as csmvector from '@lib/CubismWebFramework/src/type/csmvector';
+class CsmVector<T> extends csmvector.Live2DCubismFramework.csmVector<T> {}
 
 export {
 	CubismFramework,

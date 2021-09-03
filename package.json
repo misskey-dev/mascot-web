@@ -2,9 +2,10 @@
 	"name": "mascot-web",
 	"version": "0.0.0",
 	"scripts": {
-		"postinstall": "cd lib/CubismWebFramework && npm install",
+		"postinstall": "cd lib/CubismWebFramework && npm install && npm run build || echo done.",
 		"dev": "vite",
-		"build": "vue-tsc --noEmit && vite build",
+		"tsc": "vue-tsc --noEmit",
+		"build": "vite build",
 		"serve": "vite preview"
 	},
 	"dependencies": {

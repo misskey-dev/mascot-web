@@ -9,11 +9,13 @@
 		"sourceMap": true,
 		"resolveJsonModule": true,
 		"esModuleInterop": true,
+		"skipLibCheck": true,
 		"lib": ["esnext", "dom"],
+		"noEmitOnError": false,
 		"paths": {
 			"@lib/*": ["./lib/*"],
 		}
 	},
 	"include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
-	"exclude": ["node_modules"]
+	"exclude": ["node_modules", "./lib"]
 }

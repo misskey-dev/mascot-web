@@ -6,8 +6,12 @@ export default defineConfig({
 	resolve: {
 		alias: [{
 			find: '@lib/',
-			replacement: '../lib/'
+			replacement: __dirname + '/lib/'
 		}]
+	},
+	publicDir: 'assets',
+	build: {
+		assetsDir: 'built'
 	},
   plugins: [vue()]
 })
