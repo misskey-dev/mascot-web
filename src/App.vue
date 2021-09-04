@@ -13,11 +13,11 @@ onMounted(() => {
 	const url = new URL(window.location.href);
 
 	load(canvas.value!, {
-		scale: parseInt(url.searchParams.get('scale') || '1', 10),
-		x: parseInt(url.searchParams.get('x') || '0', 10),
-		y: parseInt(url.searchParams.get('y') || '1', 10),
-		eyeX: url.searchParams.has('eyeX') ? parseInt(url.searchParams.get('eyeX')!, 10) : undefined,
-		eyeY: url.searchParams.has('eyeY') ? parseInt(url.searchParams.get('eyeY')!, 10) : undefined,
+		scale: parseFloat(url.searchParams.get('scale') || '1'),
+		x: parseFloat(url.searchParams.get('x') || '0'),
+		y: parseFloat(url.searchParams.get('y') || '1'),
+		eyeX: url.searchParams.has('eyeX') ? parseFloat(url.searchParams.get('eyeX')!) : undefined,
+		eyeY: url.searchParams.has('eyeY') ? parseFloat(url.searchParams.get('eyeY')!) : undefined,
 	})
 	.then(_live2d => {
 		live2d = markRaw(_live2d);
