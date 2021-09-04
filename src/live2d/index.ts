@@ -100,6 +100,7 @@ async function main(canvas: HTMLCanvasElement, options: { x: number; y: number; 
 			const eyeX = options.eyeX ? options.eyeX : rect.left + (rect.width / 2);
 			const eyeY = options.eyeY ? options.eyeY : rect.top + (rect.height / 2);
 
+			// TODO: ここら辺マジックナンバー多いのでなんとかしたい
 			const angle = getAngle(cursorX, cursorY, eyeX, eyeY);
 			const r = Math.cos(angle) * Math.sin(angle) * 180 / Math.PI;
 			const distance = getDistance(cursorX, cursorY, eyeX, eyeY);
@@ -108,7 +109,7 @@ async function main(canvas: HTMLCanvasElement, options: { x: number; y: number; 
 			Object.assign(point, {
 				angleX: -dx / 10,
 				angleY: dy / 10,
-				angleZ: r * (distance / eyeX),
+				angleZ: r * (distance / eyeX) / 10,
 				angleEyeX: -dx / eyeX,
 				angleEyeY: dy / eyeY,
 			});
