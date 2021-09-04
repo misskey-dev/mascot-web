@@ -110,8 +110,8 @@ async function main(canvas: HTMLCanvasElement, options: { x: number; y: number; 
 				angleX: -dx / 10,
 				angleY: dy / 10,
 				angleZ: r * (distance / eyeX) / 10,
-				angleEyeX: -dx / eyeX,
-				angleEyeY: dy / eyeY,
+				angleEyeX: -dx / eyeX / 10,
+				angleEyeY: dy / eyeY / 2,
 			});
 			renderer.updatePoint(point);
 		};
