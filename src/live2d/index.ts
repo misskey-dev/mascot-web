@@ -85,6 +85,12 @@ async function main(canvas: HTMLCanvasElement, options: { x: number; y: number; 
 			autoBlink: true,
 			...options
 		});
+
+		window.postMessage({
+			type: 'loaded',
+			body: null,
+		}, '*');
+
 		const point = new FacePoint();
 		const _handleOnMouseMove = (e: {
 			x: number;
