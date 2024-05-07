@@ -6,7 +6,7 @@
 		"postinstall": "cd lib/CubismWebFramework && npm ci && npm run build || echo done.",
 		"dev": "vite",
 		"tsc": "vue-tsc --noEmit",
-		"build": "vue-tsc && vite build",
+		"build": "vite build",
 		"serve": "vite preview"
 	},
 	"dependencies": {
