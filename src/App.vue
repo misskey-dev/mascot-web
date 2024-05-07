@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { markRaw, onMounted, ref } from 'vue';
 import { load } from './live2d/index';
+import { Live2dRenderer } from './live2d/renderer';
 
-let live2d: any = null;
+let live2d: Live2dRenderer | null = null;
 const canvas = ref<HTMLCanvasElement>();
 
 const touched = (ev: MouseEvent) => {
@@ -18,8 +19,9 @@ onMounted(() => {
 		y: parseFloat(url.searchParams.get('y') || '1'),
 		eyeX: url.searchParams.has('eyeX') ? parseFloat(url.searchParams.get('eyeX')!) : undefined,
 		eyeY: url.searchParams.has('eyeY') ? parseFloat(url.searchParams.get('eyeY')!) : undefined,
-	})
-	.then(_live2d => {
+	}).then(_live2d => {
+		if (!_live2d) return;
+	
 		live2d = markRaw(_live2d);
 	});
 });
@@ -31,7 +33,7 @@ defineExpose({
 </script>
 
 <template>
-  <canvas id="canvas" ref="canvas" @click="touched"></canvas>
+	<canvas id="canvas" ref="canvas" @click="touched"></canvas>
 </template>
 
 <style>

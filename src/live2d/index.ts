@@ -29,7 +29,7 @@ const MODEL_FILES = {
 
 let isCoreSdkLoaded = false;
 
-export function load(canvas: HTMLCanvasElement, options: { x?: number; y?: number; scale?: number; eyeX?: number; eyeY?: number; }) {
+export function load(canvas: HTMLCanvasElement, options: { x: number; y: number; scale: number; eyeX?: number; eyeY?: number; }): Promise<Live2dRenderer | undefined> {
 	return new Promise((res, rej) => {
 		const existedCoreSdkScript = document.head.querySelector(`script[src="${CUBISM_CORE_URL}"]`);
 		if (existedCoreSdkScript) {
@@ -68,10 +68,10 @@ async function main(canvas: HTMLCanvasElement, options: { x: number; y: number; 
 				fetch(texture).then(res => res.blob())
 			)),
 			Promise.all(Object.entries(MODEL_FILES.expressions).map(([k, v]) =>
-				fetch(v).then(res => res.arrayBuffer()).then(buffer => [k, buffer])
+				fetch(v).then(res => res.arrayBuffer()).then(buffer => [k, buffer] as [string, ArrayBuffer])
 			)),
 			Promise.all(Object.entries(MODEL_FILES.motions).map(([k, v]) =>
-				fetch(v).then(res => res.arrayBuffer()).then(buffer => [k, buffer])
+				fetch(v).then(res => res.arrayBuffer()).then(buffer => [k, buffer] as [string, ArrayBuffer])
 			)),
 		]);
 		const renderer = new Live2dRenderer(canvas);
