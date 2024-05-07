@@ -86,7 +86,7 @@ async function main(canvas: HTMLCanvasElement, options: { x: number; y: number; 
 			...options
 		});
 
-		window.postMessage({
+		window.parent.postMessage({
 			type: 'loaded',
 			body: null,
 		}, '*');
