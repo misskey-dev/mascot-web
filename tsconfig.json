@@ -12,10 +12,11 @@
 		"skipLibCheck": true,
 		"lib": ["esnext", "dom"],
 		"noEmitOnError": false,
+		"baseUrl": ".",
 		"paths": {
 			"@lib/*": ["./lib/*"],
 		}
 	},
-	"include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
-	"exclude": ["node_modules", "./lib"]
+	"include": ["./src/**/*.ts", "./src/**/*.d.ts", "./src/**/*.tsx", "./src/**/*.vue"],
+	"exclude": ["node_modules", "./lib/**/*.ts"]
 }

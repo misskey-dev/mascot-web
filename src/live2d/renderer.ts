@@ -4,10 +4,6 @@ import {
 	CubismMatrix44,
 	CubismEyeBlink,
 	CubismModelSettingJson,
-	CubismMotionManager,
-	ACubismMotion,
-	CubismExpressionMotion,
-	CubismMotion,
 } from './live2d-sdk';
 import AppCubismUserModel from './cubism-model';
 import { FacePoint } from './face-point';
@@ -19,12 +15,14 @@ export interface AvatarArrayBuffers {
 	expressions: [string, ArrayBuffer][];
 	motions: [string, ArrayBuffer][];
 }
+
 interface Live2dRendererOption {
 	autoBlink: boolean;
 	x: number;
 	y: number;
 	scale: number;
 }
+
 const DEFAULT_OPTION: Live2dRendererOption = {
 	autoBlink: true,
 	x: 0,
@@ -63,8 +61,8 @@ export class Live2dRenderer {
 		const frameBuffer: WebGLFramebuffer = gl.getParameter(gl.FRAMEBUFFER_BINDING);
 
 		/**
-			* Frameworkの初期化
-			*/
+		* Frameworkの初期化
+		*/
 		if (!isFrameworkInitialized) {
 			CubismFramework.startUp();
 			CubismFramework.initialize();
@@ -82,8 +80,8 @@ export class Live2dRenderer {
 		} = buffers;
 
 		/**
-			* Live2Dモデルの作成と設定
-			*/
+		* Live2Dモデルの作成と設定
+		*/
 
 		// モデルデータをロード
 		this.model.loadModel(moc3ArrayBuffer);
@@ -133,8 +131,8 @@ export class Live2dRenderer {
 		}
 
 		/**
-			* Live2Dモデルのサイズ調整
-			*/
+		* Live2Dモデルのサイズ調整
+		*/
 		const defaultPosition = Object.assign({
 			x: 0,
 			y: 0,
@@ -175,16 +173,16 @@ export class Live2dRenderer {
 		resizeModel();
 
 		/**
-			* Live2Dモデルの描画
-			*/
+		* Live2Dモデルの描画
+		*/
 
-			// フレームバッファとビューポートを、フレームワーク設定
+		// フレームバッファとビューポートを、フレームワーク設定
 		const viewport: number[] = [
-				0,
-				0,
-				this.canvas.width,
-				this.canvas.height
-			];
+			0,
+			0,
+			this.canvas.width,
+			this.canvas.height,
+		];
 
 		// 最後の更新時間
 		let lastUpdateTime = Date.now();
