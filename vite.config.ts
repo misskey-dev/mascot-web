@@ -1,5 +1,4 @@
 import { defineConfig } from 'vite';
-import vue from '@vitejs/plugin-vue';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -19,5 +18,4 @@ export default defineConfig({
 	build: {
 		assetsDir: 'built'
 	},
-	plugins: [vue()]
 })
